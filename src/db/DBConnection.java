@@ -6,7 +6,7 @@ import java.sql.SQLClientInfoException;
 
 public class DBConnection {
 
-    private final static String url = "jdbc:mysql://127.0.0.1:3306/java_mysql";
+    private final static String url = "jdbc:mysql://127.0.0.1:3306/kirimmi_db";
     private final static String user = "root";
     private final static String password = "root";
 

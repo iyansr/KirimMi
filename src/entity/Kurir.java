@@ -3,8 +3,11 @@ package entity;
 public class Kurir {
     private String nama;
 
+    public String getNama() {
+        return nama;
+    }
 
-    public String getAllKurir(){
-        return this.nama;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 }
