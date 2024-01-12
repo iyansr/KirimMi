@@ -6,7 +6,7 @@ import dto.KurirDTO;
 import javax.swing.*;
 import java.sql.Connection;
 
-public class TambahKuririForm extends JFrame {
+public class TambahKurirForm extends JFrame {
     private JTextField namaField;
     private JTextField noHpField;
     private JTextField platNoField;
@@ -16,7 +16,7 @@ public class TambahKuririForm extends JFrame {
 
     private final Connection connection;
 
-    public TambahKuririForm(Connection connection) {
+    public TambahKurirForm(Connection connection) {
         this.connection = connection;
         setSize(720, 320);
         setTitle("Tambah Kurir");

@@ -22,7 +22,7 @@ public class LoginForm extends JFrame {
         setTitle("KirimMi");
         setSize(600, 200);
         setVisible(true);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         emailField.setText("iyan@gmail.com");
         passwordField.setText("test123");
