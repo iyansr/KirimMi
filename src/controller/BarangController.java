@@ -10,8 +10,6 @@ public class BarangController {
 
     public static ArrayList<Barang> getAllBarang(Connection connection) throws Exception {
         try {
-            System.out.print("Connection: ");
-            System.out.print(connection);
             if (connection != null) {
                 String query = "select " +
                         "barang.id as id_barang, " +
@@ -44,8 +42,6 @@ public class BarangController {
 
                     listBarang.add(barang);
                 }
-
-                System.out.println(listBarang);
 
                 return listBarang;
             }
@@ -83,7 +79,7 @@ public class BarangController {
             return generatedKey;
         } catch (Exception error) {
             System.out.println(error.getMessage());
-            return 0;
+            return -1;
         }
     }
 }

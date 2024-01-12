@@ -2,6 +2,7 @@ package ui;
 
 import controller.BarangController;
 import entity.Barang;
+import entity.User;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -12,16 +13,24 @@ public class DashboardScreen extends JFrame {
     private JTabbedPane tabbedPane1;
     private JPanel panel1;
     private JTable table1;
+    private JButton tambahPengirimanButton;
+    private JLabel loginSebagaiLabel;
+    private JButton tambahKurirButton;
     private final Connection connection;
 
-    public DashboardScreen(Connection connection) {
+    public DashboardScreen(Connection connection, User user) {
         this.connection = connection;
-
-        setContentPane(tabbedPane1);
+        setContentPane(panel1);
+        loginSebagaiLabel.setText("Login Sebagai: " + user.getNama());
+        tambahPengirimanButton.setSize(80, 32);
         setSize(1280, 720);
+        tabbedPane1.requestFocusInWindow();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
+        tambahKurirButton.addActionListener(e -> {
+            new TambahKuririForm(connection);
+        });
 
     }
 

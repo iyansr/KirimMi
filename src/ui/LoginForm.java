@@ -4,8 +4,6 @@ import controller.UserController;
 import entity.User;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,7 +22,7 @@ public class LoginForm extends JFrame {
         setTitle("KirimMi");
         setSize(600, 200);
         setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         emailField.setText("iyan@gmail.com");
         passwordField.setText("test123");
@@ -54,7 +52,7 @@ public class LoginForm extends JFrame {
                     JOptionPane.showMessageDialog(loginPanel, "Email atau password salah");
                 } else {
                     setVisible(false);
-                    new DashboardScreen(connection);
+                    new DashboardScreen(connection, user);
                 }
 
             } catch (Exception ex) {

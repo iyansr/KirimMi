@@ -1,7 +1,6 @@
 package dto;
 
 public class BarangDTO {
-    private final int id;
     private final String nama;
     private final double berat;
     private final int idPenerima;
@@ -9,8 +8,7 @@ public class BarangDTO {
     private final String status;
     private final String deskripsi;
 
-    public BarangDTO(int id, String nama, double berat, int idPenerima, int idPengirim, String status, String deskripsi) {
-        this.id = id;
+    public BarangDTO(String nama, double berat, int idPenerima, int idPengirim, String status, String deskripsi) {
         this.nama = nama;
         this.berat = berat;
         this.idPenerima = idPenerima;
@@ -22,10 +20,6 @@ public class BarangDTO {
     //Getter
     public String getNama() {
         return nama;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public double getBerat() {

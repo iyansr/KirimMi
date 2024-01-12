@@ -9,17 +9,11 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class PelangganController {
-    private final Connection connection;
 
-    public PelangganController() throws Exception {
-        DBConnection db = new DBConnection();
-        this.connection = db.getConnection();
-    }
-
-    public ArrayList<Pelanggan> getAllPelanggan() throws SQLException {
+    public static ArrayList<Pelanggan> getAllPelanggan(Connection connection) throws SQLException {
         try {
             String query = "select * from pelanggan";
-            Statement statement = this.connection.createStatement();
+            Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
 
             ArrayList<Pelanggan> listPelanggan = new ArrayList<>();
@@ -40,15 +34,13 @@ public class PelangganController {
         } catch (Exception error) {
             System.out.println(error.getMessage());
             return null;
-        } finally {
-            this.connection.close();
         }
     }
 
-    public int addPelanggan(PelangganDTO pelangganDTO) {
+    public static int addPelanggan(Connection connection, PelangganDTO pelangganDTO) {
         try {
             String query = "insert into pelanggan (nama, no_hp, alamat, kota, kecamatan) values (?, ?, ?, ?, ?)";
-            PreparedStatement statement = this.connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement statement = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS);
             statement.setString(1, pelangganDTO.getNama());
             statement.setString(2, pelangganDTO.getNoHp());
             statement.setString(3, pelangganDTO.getAlamat());
@@ -70,7 +62,7 @@ public class PelangganController {
             return generatedKey;
         } catch (Exception error) {
             System.out.println(error.getMessage());
-            return 0;
+            return -1;
         }
     }
 }
