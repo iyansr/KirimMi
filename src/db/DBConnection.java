@@ -6,7 +6,7 @@ import java.sql.SQLClientInfoException;
 
 public class DBConnection {
 
-    private final static String url = "jdbc:mysql://127.0.0.1:3306/kirimmi_db";
+    private final static String url = "jdbc:mysql://mysql.web-ii.orb.local:3306/kirimmi2";
     private final static String user = "root";
     private final static String password = "root";
 
@@ -15,7 +15,7 @@ public class DBConnection {
             return DriverManager.getConnection(url, user, password);
         } catch (SQLClientInfoException e) {
             System.err.println("Gagal Execute Command\n");
-            System.err.println(e.toString());
+            System.err.println(e.getMessage());
             return null;
         }
     }

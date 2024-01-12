@@ -5,7 +5,7 @@ CREATE TABLE `barang` (
    `id_penerima` int(16) NOT NULL,
    `id_pengirim` int(16) NOT NULL,
    `status` varchar(128) NOT NULL,
-   `deskripsi` int(100) NOT NULL,
+   `deskripsi` varchar(100) NOT NULL,
    PRIMARY KEY(`id`)
 );
 

@@ -1,70 +1,73 @@
 package entity;
 
 public class Barang {
+    private final int id;
     private String nama;
     private double berat;
-    private int idPenerima;
-    private int idPengirim;
+    private String penerima;
+    private String pengirim;
     private String status;
     private String deskripsi;
 
-    public Barang(String nama, double berat, int idPenerima, int idPengirim, String status, String deskripsi) {
+    public Barang(int id, String nama, double berat, String penerima, String pengirim, String status, String deskripsi) {
+        this.id = id;
         this.nama = nama;
         this.berat = berat;
-        this.idPenerima = idPenerima;
-        this.idPengirim = idPengirim;
+        this.penerima = penerima;
+        this.pengirim = pengirim;
         this.status = status;
         this.deskripsi = deskripsi;
     }
 
-
-    //Setter
-    public void setNama(String nama) {
-        this.nama = nama;
+    public int getId() {
+        return id;
     }
 
-    public void setBerat(double berat) {
-        this.berat = berat;
-    }
-
-    public void setDeskripsi(String deskripsi) {
-        this.deskripsi = deskripsi;
-    }
-
-    public void setIdPenerima(int idPenerima) {
-        this.idPenerima = idPenerima;
-    }
-
-    public void setIdPengirim(int idPengirim) {
-        this.idPengirim = idPengirim;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    //Getter
     public String getNama() {
         return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public double getBerat() {
         return berat;
     }
 
-    public int getIdPenerima() {
-        return idPenerima;
+    public void setBerat(double berat) {
+        this.berat = berat;
     }
 
-    public int getIdPengirim() {
-        return idPengirim;
+    public String getPenerima() {
+        return penerima;
+    }
+
+    public void setPenerima(String penerima) {
+        this.penerima = penerima;
+    }
+
+    public String getPengirim() {
+        return pengirim;
+    }
+
+    public void setPengirim(String pengirim) {
+        this.pengirim = pengirim;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getDeskripsi() {
         return deskripsi;
     }
 
-    public String getStatus() {
-        return status;
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
 }

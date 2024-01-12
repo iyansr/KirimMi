@@ -1,7 +1,15 @@
 
-public class Main {
-    public static void main(String[] args) {
+import db.DBConnection;
+import ui.LoginForm;
 
-        System.out.println("Hello world!");
+import java.sql.Connection;
+
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        DBConnection dbConnection = new DBConnection();
+        Connection connection = dbConnection.getConnection();
+
+        new LoginForm(connection);
     }
 }
