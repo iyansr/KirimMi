@@ -41,4 +41,6 @@ public class BarangDTO {
     public String getStatus() {
         return status;
     }
+
+
 }

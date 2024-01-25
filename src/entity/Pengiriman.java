@@ -1,122 +1,25 @@
 package entity;
 
 public class Pengiriman {
-    private final int id;
-    private String idBarang;
+    private int idPengiriman;
+    private String tanggalKirim;
     private String namaPengirim;
-    private String alamatPengirim;
-    private String noHpPengirim;
     private String namaPenerima;
-    private String alamatPenerima;
-    private String noHpPenerima;
-    private String idKurir;
-    private int total;
+    private String namaBarang;
+    private double beratBarang;
+    private String statusBarang;
+    private String deskripsiBarang;
+    private String namaKurir;
+    private String namaAdmin;
     private String kode;
-    private String idAdmin;
-    private String date;
+    int harga;
 
-    public Pengiriman(int id,
-                      String idBarang,
-                      String namaPengirim,
-                      String alamatPengirim,
-                      String noHpPengirim,
-                      String namaPenerima,
-                      String alamatPenerima,
-                      String noHpPenerima,
-                      String idKurir,
-                      int total,
-                      String kode,
-                      String idAdmin,
-                      String date) {
-        this.id = id;
-        this.idBarang = idBarang;
-        this.namaPengirim = namaPengirim;
-        this.alamatPengirim = alamatPengirim;
-        this.noHpPengirim = noHpPengirim;
-        this.namaPenerima = namaPenerima;
-        this.alamatPenerima = alamatPenerima;
-        this.noHpPenerima = noHpPenerima;
-        this.idKurir = idKurir;
-        this.total = total;
-        this.kode = kode;
-        this.idAdmin = idAdmin;
-        this.date = date;
+    public int getHarga() {
+        return harga;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getIdBarang() {
-        return idBarang;
-    }
-
-    public void setIdBarang(String idBarang) {
-        this.idBarang = idBarang;
-    }
-
-    public String getNamaPengirim() {
-        return namaPengirim;
-    }
-
-    public void setNamaPengirim(String namaPengirim) {
-        this.namaPengirim = namaPengirim;
-    }
-
-    public String getAlamatPengirim() {
-        return alamatPengirim;
-    }
-
-    public void setAlamatPengirim(String alamatPengirim) {
-        this.alamatPengirim = alamatPengirim;
-    }
-
-    public String getNoHpPengirim() {
-        return noHpPengirim;
-    }
-
-    public void setNoHpPengirim(String noHpPengirim) {
-        this.noHpPengirim = noHpPengirim;
-    }
-
-    public String getNamaPenerima() {
-        return namaPenerima;
-    }
-
-    public void setNamaPenerima(String namaPenerima) {
-        this.namaPenerima = namaPenerima;
-    }
-
-    public String getAlamatPenerima() {
-        return alamatPenerima;
-    }
-
-    public void setAlamatPenerima(String alamatPenerima) {
-        this.alamatPenerima = alamatPenerima;
-    }
-
-    public String getNoHpPenerima() {
-        return noHpPenerima;
-    }
-
-    public void setNoHpPenerima(String noHpPenerima) {
-        this.noHpPenerima = noHpPenerima;
-    }
-
-    public String getIdKurir() {
-        return idKurir;
-    }
-
-    public void setIdKurir(String idKurir) {
-        this.idKurir = idKurir;
-    }
-
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
+    public void setHarga(int harga) {
+        this.harga = harga;
     }
 
     public String getKode() {
@@ -127,19 +30,83 @@ public class Pengiriman {
         this.kode = kode;
     }
 
-    public String getIdAdmin() {
-        return idAdmin;
+    public int getIdPengiriman() {
+        return idPengiriman;
     }
 
-    public void setIdAdmin(String idAdmin) {
-        this.idAdmin = idAdmin;
+    public void setIdPengiriman(int idPengiriman) {
+        this.idPengiriman = idPengiriman;
     }
 
-    public String getDate() {
-        return date;
+    public String getTanggalKirim() {
+        return tanggalKirim;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setTanggalKirim(String tanggalKirim) {
+        this.tanggalKirim = tanggalKirim;
+    }
+
+    public String getNamaPengirim() {
+        return namaPengirim;
+    }
+
+    public void setNamaPengirim(String namaPengirim) {
+        this.namaPengirim = namaPengirim;
+    }
+
+    public String getNamaPenerima() {
+        return namaPenerima;
+    }
+
+    public void setNamaPenerima(String namaPenerima) {
+        this.namaPenerima = namaPenerima;
+    }
+
+    public String getNamaBarang() {
+        return namaBarang;
+    }
+
+    public void setNamaBarang(String namaBarang) {
+        this.namaBarang = namaBarang;
+    }
+
+    public double getBeratBarang() {
+        return beratBarang;
+    }
+
+    public void setBeratBarang(double beratBarang) {
+        this.beratBarang = beratBarang;
+    }
+
+    public String getStatusBarang() {
+        return statusBarang;
+    }
+
+    public void setStatusBarang(String statusBarang) {
+        this.statusBarang = statusBarang;
+    }
+
+    public String getDeskripsiBarang() {
+        return deskripsiBarang;
+    }
+
+    public void setDeskripsiBarang(String deskripsiBarang) {
+        this.deskripsiBarang = deskripsiBarang;
+    }
+
+    public String getNamaKurir() {
+        return namaKurir;
+    }
+
+    public void setNamaKurir(String namaKurir) {
+        this.namaKurir = namaKurir;
+    }
+
+    public String getNamaAdmin() {
+        return namaAdmin;
+    }
+
+    public void setNamaAdmin(String namaAdmin) {
+        this.namaAdmin = namaAdmin;
     }
 }
