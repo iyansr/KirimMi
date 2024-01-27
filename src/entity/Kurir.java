@@ -50,4 +50,9 @@ public class Kurir {
     public void setPlatNo(String platNo) {
         this.platNo = platNo;
     }
+
+    @Override
+    public String toString() {
+        return this.nama;
+    }
 }

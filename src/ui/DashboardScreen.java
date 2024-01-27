@@ -42,7 +42,10 @@ public class DashboardScreen extends JFrame {
         });
 
         tambahPengirimanButton.addActionListener(e -> {
-            new TambahPengirimanForm();
+            SwingUtilities.invokeLater(() -> {
+                new TambahPengirimanForm(connection);
+            });
+
         });
 
         kurirRefresh.addActionListener(e -> {

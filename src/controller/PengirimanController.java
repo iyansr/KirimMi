@@ -79,14 +79,35 @@ public class PengirimanController {
         }
     }
 
-    public static void addPengiriman(Connection connection, BarangDTO barang, PelangganDTO penerima, PelangganDTO pengirim, int idKurir, int idAdmin) throws SQLException {
+    public static void addPengiriman(
+            Connection connection,
+            PelangganDTO penerima,
+            PelangganDTO pengirim,
+            int idKurir,
+            int idAdmin,
+            String namabarang,
+            String beratBarang,
+            String deskripsi
+    ) throws SQLException {
 
         try {
             connection.setAutoCommit(false);
             int idPenerima = PelangganController.addPelanggan(connection, penerima);
             int idPengirim = PelangganController.addPelanggan(connection, pengirim);
 
+            BarangDTO barang = new BarangDTO(namabarang,
+                    Double.parseDouble(beratBarang),
+                    idPenerima,
+                    idPengirim,
+                    "Menunggu Kurir", deskripsi);
+
             int idBarang = BarangController.addBarang(connection, barang, idPenerima, idPengirim);
+
+            System.out.println(idPenerima);
+            System.out.println(idPengirim);
+            System.out.println(idBarang);
+            System.out.println(idAdmin);
+            System.out.println(idKurir);
 
             String query = "insert into pengiriman (id_barang, id_kurir, total, kode, id_admin, tanggal) values (?, ?, ?, ?, ?, ?)";
             Calendar cal = Calendar.getInstance();
@@ -95,10 +116,11 @@ public class PengirimanController {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, idBarang);
             statement.setInt(2, idKurir);
-            statement.setInt(3, 20000);
+            statement.setInt(3, Integer.parseInt(beratBarang) * 20000);
             statement.setString(4, RandomString.generateRandomString());
             statement.setInt(5, idAdmin);
             statement.setTimestamp(6, timestamp);
+            statement.executeUpdate();
 
             connection.commit();
 
